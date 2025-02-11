@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 
 const openai = new OpenAI({
   baseURL: 'https://openrouter.ai/api/v1',
-  apiKey: process.env.OPENAI_API_KEY || 'My API Key',
+  apiKey: process.env.OPENAI_API_KEY,
 })
 
 export const dynamic = 'force-dynamic'
