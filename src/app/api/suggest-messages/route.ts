@@ -6,12 +6,12 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 })
 
-export const runtime = 'edge'
+export const dynamic = 'force-dynamic'
 
 export async function POST(req: Request) {
   try {
     const prompt =
-      "Create a list of three open-ended and engaging questions of max 10 words formatted as a single string. Each question should be separated by '||'. These questions are for an anonymous social messaging platform, like Qooh.me, and should be suitable for a diverse audience. Avoid personal or sensitive topics, focusing instead on universal themes that encourage friendly interaction. For example, your output should be structured like this: 'What’s a hobby you’ve recently started?||If you could have dinner with any historical figure, who would it be?||What’s a simple thing that makes you happy?'. Ensure the questions are intriguing, foster curiosity, and contribute to a positive and welcoming conversational environment."
+      "Generate a list of three engaging and friendly messages, each no longer than 10 words, formatted as a single string. Each message should be separated by '||'. These messages are for an anonymous social messaging platform, like Qooh.me, and should be positive, uplifting, or thought-provoking without requiring a reply. Avoid personal or sensitive topics, and focus on universal themes that create a welcoming and feel-good atmosphere. For example, your output should be structured like this: 'You make the world a little brighter!||Small wins deserve to be celebrated—proud of you!||Your kindness doesn’t go unnoticed, keep being amazing!'. Ensure the messages are warm, inclusive, and contribute to a positive community experience."
 
     const response = await openai.chat.completions.create({
       model: 'openchat/openchat-7b:free',
