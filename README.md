@@ -47,4 +47,4 @@ The app will be available at `http://localhost:3030/`.
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is open-source and available under the [MIT License](https://github.com/pulkit-1110/mystery-message?tab=MIT-1-ov-file#readme).
