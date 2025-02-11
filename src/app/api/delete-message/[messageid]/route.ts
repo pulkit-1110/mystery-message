@@ -6,10 +6,16 @@ import { authOptions } from '../../auth/[...nextauth]/options'
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { messageid: string } }
-) {
-  const resolvedParams = await Promise.resolve(params)
-  const { messageid } = resolvedParams
+  { params }: { params: Promise<{ messageid: string }> }
+): Promise<NextResponse> {
+  const { messageid } = await params
+
+  if (!messageid) {
+    return NextResponse.json(
+      { success: false, message: 'Message ID is required' },
+      { status: 400 }
+    )
+  }
 
   await dbConnect()
   const session = await getServerSession(authOptions)
