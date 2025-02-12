@@ -9,6 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Mystery Message',
   description: 'Anonymous messages from real people.',
+  icons: { icon: '/favicon.ico' },
 }
 
 interface RootLayoutProps {

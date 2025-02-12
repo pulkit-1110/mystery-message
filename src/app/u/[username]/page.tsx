@@ -8,7 +8,7 @@ import { Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { CardHeader, CardContent, Card } from '@/components/ui/card'
-import { useCompletion } from 'ai/react'
+import { useCompletion } from '@ai-sdk/react'
 import {
   Form,
   FormControl,
@@ -34,7 +34,7 @@ const parseStringMessages = (messageString: string): string[] => {
 }
 
 const initialMessageString =
-  "What's your favorite movie?||Do you have any pets?||What's your dream job?"
+  "Cherish each moment! 🌞||Embrace each new day with a smile, it's a gift!||Let's make today count, one step at a time!"
 
 export default function SendMessage() {
   const params = useParams<{ username: string }>()
